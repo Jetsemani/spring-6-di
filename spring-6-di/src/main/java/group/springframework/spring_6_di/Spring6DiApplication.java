@@ -10,8 +10,13 @@ public class Spring6DiApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(Spring6DiApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(Spring6DiApplication.class, args);
 
+		MyController controller = ctx.getBean(MyController.class);
+
+		System.out.println("I´m Man Method");
+
+		System.out.println(controller.sayhello());
 
 	}
 
