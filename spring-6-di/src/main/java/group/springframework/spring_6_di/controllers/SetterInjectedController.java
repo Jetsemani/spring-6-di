@@ -2,6 +2,7 @@ package group.springframework.spring_6_di.controllers;
 
 import group.springframework.spring_6_di.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -10,6 +11,7 @@ public class SetterInjectedController {
 
     private GreetingService greetingService;
 
+    @Qualifier("setterGettingBean")
     @Autowired
     public void setGreetingService(GreetingService greetingService)
     {
@@ -18,7 +20,6 @@ public class SetterInjectedController {
     }
 
     public String sayHello() {
-        System.out.println("Say Hello ejecutado");
         return greetingService.sayGreeting();
     }
 }
