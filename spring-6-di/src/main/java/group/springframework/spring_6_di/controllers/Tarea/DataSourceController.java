@@ -9,7 +9,7 @@ public class DataSourceController {
 
     private final GreetingService greetingService;
 
-    public DataSourceController(@Qualifier("devGreetingService") GreetingService greetingService) {
+    public DataSourceController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
